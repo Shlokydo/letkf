@@ -272,6 +272,7 @@ def traintest(parameter_list, flag='train'):
             print('Starting testing...')
             test(parameter_list, model)
             return parameter_list['global_epoch']
+            
         if flag == 'train':
             print('Starting training from a restored point... \n')
             return train(parameter_list, model, checkpoint, manager, summary_writer, optimizer)
@@ -285,7 +286,7 @@ def traintest(parameter_list, flag='train'):
         
         if flag == 'train':
             print('Initializing from scratch... \n')
-            parameter_list = train(parameter_list, model, checkpoint, manager, summary_writer, optimizer)
+            parameter_list['global_epoch'] = train(parameter_list, model, checkpoint, manager, summary_writer, optimizer)
             return parameter_list['global_epoch']
 
     print(learning_rate)
