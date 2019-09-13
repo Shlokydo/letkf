@@ -1,16 +1,16 @@
 #!/bin/sh
 #set -e
 VAR=_biased
-#METHOD=
+METHOD=
 #METHOD=_DdSM
-METHOD=_reg
-OBS=all_02
+#METHOD=_reg
+OBS=all_10
 #EXP=M20L30I20
 #EXP=M20L30I20_A80NB99
 #EXP=nocorr
-#EXP=nocorr_I80
+EXP=nocorr_I80
 #EXP=DdSM
-EXP=reg
+#EXP=reg
 #EXP=test
 
 MONITOR=F

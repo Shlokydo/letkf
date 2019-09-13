@@ -32,8 +32,8 @@ PROGRAM letkf
   REAL(r_size) :: parm_infl(nx,nt) ! inflation parameter
   REAL(r_size) :: parm
   REAL(r_size) :: xmaxloc
-!  REAL(r_size) :: obserr=1.0d0
-  REAL(r_size) :: obserr=0.2d0
+  REAL(r_size) :: obserr=1.0d0
+!  REAL(r_size) :: obserr=0.2d0
   REAL(r_sngl) :: y4(ny)
   REAL(r_sngl) :: x4(nx)
   REAL(r_size) :: xnature(nx,nt)

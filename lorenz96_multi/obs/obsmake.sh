@@ -1,7 +1,7 @@
 #!/bin/sh
 #set -e
 ORO=
-OBSNAME=all_02
+OBSNAME=all_10
 F90="ifort"
 CDIR=`pwd`
 cd ..
