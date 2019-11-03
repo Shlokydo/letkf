@@ -62,9 +62,9 @@ if not os.path.exists(parameter_list['experiment_dir']):
 
 else:
     if os.path.isfile(pickle_name):
-        parameter_list = helpfunc.read_dataframe(pickle_name)
+        parameter_list = helpfunc.read_pickle(pickle_name)
     else:
-        print('\nNo CSV file exists at {}. Exiting....\n'.format(csv_name))
+        print('\nNo pickle file exists at {}. Exiting....\n'.format(pickle_name))
         sys.exit()
 
 parameter_list['epochs'] = 400
@@ -73,4 +73,4 @@ parameter_list['flag'] = 'test'
 
 parameter_list['global_epoch'] = tntt.traintest(copy.deepcopy(parameter_list), flag = parameter_list['flag'])
 
-helpfunc.write_dataframe(parameter_list, pickle_name)
+helpfunc.write_pickle(parameter_list, pickle_name)

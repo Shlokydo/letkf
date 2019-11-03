@@ -78,13 +78,13 @@ def train_val_creator(dataset, val_size):
     train_dataset = dataset.skip(val_size)
     return train_dataset, val_dataset
 
-def read_dataframe(filename):
+def read_pickle(filename):
     pickle_in = open(filename, "rb")
     parameter_list = pickle.load(pickle_in)
     pickle_in.close()
     return parameter_list
 
-def write_dataframe(dicty, filename):   
+def write_pickle(dicty, filename):   
     pickle_out = open(filename, "wb")
     pickle.dump(dicty, pickle_out)
     pickle_out.close()
