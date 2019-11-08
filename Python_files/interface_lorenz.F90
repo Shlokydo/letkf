@@ -3,7 +3,7 @@ program interface_lorenz
   use forpy_mod
   implicit none
 
-  interger :: ierror
+  integer :: ierror
   type(module_py) :: fpi
   type(object) :: r_vec, model
   type(ndarray) :: vec, r_vec_cast
@@ -29,10 +29,10 @@ program interface_lorenz
     ierror = ndarray_create(vec, f_inp)
   
     !Sending the array for new_forecast
-    ierror = tuple_create(args2, 2)
+    ierror = tuple_create(args, 2)
     ierror = args%setitem(0, model)
     ierror = args%setitem(1, vec)
-    ierror = call_py(r_vec, fpi, "prediction", args2)
+    ierror = call_py(r_vec, fpi, "prediction", args)
     ierror = cast(r_vec_cast, r_vec)
     !Transferring the data to fortran vector for data assimilation
     ierror = r_vec_cast%get_data(f_vec)
